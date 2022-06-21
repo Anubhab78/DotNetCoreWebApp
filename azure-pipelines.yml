@@ -27,19 +27,3 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     
- - task: kasunkodagoda.owasp-zap-scan.owasp-zap-scan.OwaspZapScan@2
-   displayName: 'OWASP ZAP Scan'
-   inputs:
-     ZapApiUrl: 'localhost:8081'
-     ZapApiKey: '$(ZAP_API_KEY)'
-     TargetUrl: 'http://webapp000.azurewebsites.net'
-     ClearSession: false
-     ExecuteSpiderScan: true
-     RecurseSpider: false
-     SubtreeOnly: false
-     ExecuteActiveScan: true
-     ContextId: 2
-     InScopeOnly: false
-     EnableVerifications: false
-     ReportType: xml
-     enabled: false
